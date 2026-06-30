@@ -1,0 +1,7 @@
+interface:
+  display_name: "Agent Cache"
+  short_description: "Prompt-first cache for token savings"
+  default_prompt: "Use $agent-cache with a natural-language prompt first, then inspect doctor and telemetry if you need to verify the cache path."
+
+policy:
+  allow_implicit_invocation: true
