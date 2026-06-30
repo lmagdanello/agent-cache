@@ -1,16 +1,15 @@
 # Agent Cache
 
+[![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![AI](https://img.shields.io/badge/AI-LLM%20Cache-0F766E)](https://github.com/)
+[![LLM](https://img.shields.io/badge/LLM-Safe%20Reuse-111827)](https://github.com/)
+
 Agent Cache is a client-side cache for LLM prompts.
 
 It reduces token cost when users repeat the same task shape with different details.
 
 It is not a semantic answer cache.
 Similarity can propose reuse, but validation decides.
-
-[![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![AI](https://img.shields.io/badge/AI-LLM%20Cache-0F766E)](https://github.com/)
-[![LLM](https://img.shields.io/badge/LLM-Safe%20Reuse-111827)](https://github.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## How It Saves Tokens
 
