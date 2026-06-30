@@ -88,6 +88,12 @@ class AgentCacheAgent:
                     "index_id": docs_index["index_id"],
                 },
                 token_count=len((response_text or "").split()),
+                metadata={
+                    "kind": "docs_index",
+                    "docs_index_id": docs_index["index_id"],
+                    "source": self._docs_source_from_item(docs_item),
+                    "matched_title": docs_item.get("title") if isinstance(docs_item, dict) else None,
+                },
             )
             self.store.save_response(response)
             self.telemetry.record("hits")

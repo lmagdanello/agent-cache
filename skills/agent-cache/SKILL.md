@@ -64,6 +64,7 @@ Use the agent-cache skill: ingest https://pokeapi.co/docs/v2, then ask: How does
 
 The ingest step persists the docs index in SQLite and also writes the JSONL index file. After that, ask questions normally; you do not need to re-run ingest unless the source docs changed.
 The ingest step accepts markdown, HTML, PDF, DOCX, XLSX, CSV, JSON, XML, and images when the optional extractors are available.
+When `ask` returns a docs-backed hit, use the returned `response` and `source` fields directly. Do not infer the endpoint behavior from the hit alone.
 
 For repository examples:
 

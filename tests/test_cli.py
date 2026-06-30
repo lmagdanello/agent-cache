@@ -202,6 +202,8 @@ def test_cli_docs_index_replay(tmp_path):
     ask_out = run_cli("ask", "How does PokéAPI pagination work?", "--db", str(db), cwd=tmp_path)
     ask = json.loads(ask_out.stdout)
     assert ask["status"] == "HIT_EXACT"
+    assert "paginated" in ask["response"]
+    assert ask["source"].endswith("pagination.md")
 
     out = run_cli("replay", str(prompts), "--index", str(index), "--db", str(db), cwd=tmp_path)
     result = json.loads(out.stdout)

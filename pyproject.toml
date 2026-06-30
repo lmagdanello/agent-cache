@@ -4,11 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agent-cache"
-version = "0.1.0"
+version = "0.1.1"
 description = "Agentic generative prompt cache with structural validation and safe fallback"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "Pillow>=10.0.0",
+    "PyPDF2>=3.0.0",
+    "pytesseract>=0.3.10",
+]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]

@@ -41,6 +41,8 @@ python -m pip install git+https://github.com/lmagdanello/agent-cache.git
 
 After you publish a GitHub Release, users can also install from the released source archive or wheel attached to that release.
 
+PDF extraction and image OCR Python dependencies are installed with the package. Image OCR still needs the `tesseract` system binary if you want OCR support on images.
+
 ## Use
 
 Initialize the cache:
@@ -59,6 +61,20 @@ Ask a question:
 
 ```bash
 python -m agent_cache.cli ask "How does PokéAPI pagination work?"
+```
+
+Example `ask` output:
+
+```json
+{
+  "status": "HIT_EXACT",
+  "score": 1.0,
+  "reason": "matched persisted docs index pokeapi-index",
+  "response": "List endpoints are paginated and support limit/offset.",
+  "source": "/tmp/pokeapi-docs.html",
+  "docs_index_id": "pokeapi-index",
+  "matched_title": "Resource pagination"
+}
 ```
 
 Validate cache savings:

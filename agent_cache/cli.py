@@ -302,7 +302,21 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "ask":
         result = agent.ask(args.prompt)
-        print(json.dumps({"status": result.decision.status.value, "score": result.decision.score, "reason": result.decision.reason}))
+        response = result.decision.response
+        response_metadata = response.metadata if response else {}
+        print(
+            json.dumps(
+                {
+                    "status": result.decision.status.value,
+                    "score": result.decision.score,
+                    "reason": result.decision.reason,
+                    "response": response.raw_response if response else None,
+                    "source": response_metadata.get("source"),
+                    "docs_index_id": response_metadata.get("docs_index_id"),
+                    "matched_title": response_metadata.get("matched_title"),
+                }
+            )
+        )
         return 0
 
     if args.command == "stats":

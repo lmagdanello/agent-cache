@@ -1,5 +1,22 @@
 # Release Notes
 
+## v0.1.1
+
+Docs-backed cache and packaging improvements.
+
+### Highlights
+
+- Persistent docs indexes stored in SQLite
+- `ask` returns `response`, `source`, `docs_index_id`, and `matched_title`
+- Default database uses `/tmp/agent-cache.sqlite3`
+- PDF and OCR Python dependencies ship with the package
+- GitHub release workflow builds wheel and sdist artifacts
+
+### Notes
+
+- Image OCR still requires the `tesseract` system binary
+- Existing `v0.1.0` remains available as the initial release
+
 ## v0.1.0
 
 Initial public release of Agent Cache.
