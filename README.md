@@ -27,6 +27,20 @@ cd prompt-cache
 ./skills/agent-cache/scripts/install_to_codex.sh
 ```
 
+Install the Python package locally:
+
+```bash
+python -m pip install .
+```
+
+Install directly from GitHub:
+
+```bash
+python -m pip install git+https://github.com/lmagdanello/agent-cache.git
+```
+
+After you publish a GitHub Release, users can also install from the released source archive or wheel attached to that release.
+
 ## Use
 
 Initialize the cache:
@@ -109,19 +123,6 @@ Shopping prompt:
 Find AAA batteries under 30
 ```
 
-## Contributing
-
-Contributions are welcome.
-
-- Open an issue before large changes if the behavior or API will change.
-- Keep validation deterministic and explicit.
-- Prefer MISS over unsafe reuse.
-- Add or update tests for any cache behavior change.
-
-## License
-
-MIT License. See [LICENSE](LICENSE).
-
 ## CLI
 
 - `agent-cache init`
@@ -141,3 +142,16 @@ MIT License. See [LICENSE](LICENSE).
 - Never guess dynamic data.
 
 By default, Agent Cache stores its SQLite database at `/tmp/agent-cache.sqlite3`.
+
+## Contributing
+
+Contributions are welcome.
+
+- Open an issue before large changes if the behavior or API will change.
+- Keep validation deterministic and explicit.
+- Prefer MISS over unsafe reuse.
+- Add or update tests for any cache behavior change.
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
